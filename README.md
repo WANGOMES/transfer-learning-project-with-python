@@ -1,15 +1,29 @@
 # Transfer Learning Project with Python
-Transferindo conhecimento com rede treinada VGG16 de reconhecimento de imagens utilizando o dataset cats_vs_dogs.
+ - Transferindo conhecimento com rede neural pré treinada de reconhecimento de imagens.
+ - Utilizando o modelo Xception pré treinada com o dataset ImageNet.
+ - Utilizando o dataset cats_vs_dogs (Kaggle).
 
-[![Transfer Learning](https://cdn-icons-png.flaticon.com/512/8738/8738679.png "Transfer Learning")](https://www.flaticon.com/br/icone-gratis/transferencia-de-conhecimento_8738679)
+# Fluxo de trabalho do transfer learning
+1. Instanciando um modelo_base e carregando pesos pré-treinados nele.
 
-## KERAS - Transfer Learning
+    O argumento **_weights="imagenet"_** podemos carregar os pesos pré treinados na ImageNet dataset.
+
+2. Congelando todas as camadas no modelo_base configurando _**modelo_base.trainable = False**_.    
+3. Crie um novo modelo sobre a saída de uma (ou várias) camadas do modelo_base.
+4. Treine seu novo modelo em seu novo conjunto de dados.
+
+# Afinando o modelo
+Após treinar seu modelo com novos dados, podemos descongelar o modelo_base utilizando **_modelo_base.trainable = True_** e treinar novamente do inicio ao fim com uma baixa taxa de aprendizado.
+
+
+# Referências e Links importantes
+### KERAS - Transfer Learning
 https://keras.io/guides/transfer_learning/
 
-## KERAS - Criando novas camadas e modelos por meio de subclasses
+### KERAS - Criando novas camadas e modelos por meio de subclasses
 https://keras.io/guides/making_new_layers_and_models_via_subclassing/
 
-## KAGGLE - cats_vs_dogs dataset download
+### KAGGLE - cats_vs_dogs dataset download
 https://www.kaggle.com/competitions/dogs-vs-cats/data
 
 [![Cats Vs Dogs](https://media.tenor.com/PFFw6tqLS_wAAAAC/cat-force-catisyourfather.gif "Cats Vs Dogs")](https://tenor.com/view/cat-force-catisyourfather-cat-vs-dog-gif-12806997)
