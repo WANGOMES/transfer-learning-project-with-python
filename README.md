@@ -9,8 +9,8 @@
     O argumento **_weights="imagenet"_** podemos carregar os pesos pré treinados na ImageNet dataset.
 
 2. Congelando todas as camadas no modelo_base configurando _**modelo_base.trainable = False**_.    
-3. Crie um novo modelo sobre a saída de uma (ou várias) camadas do modelo_base.
-4. Treine seu novo modelo em seu novo conjunto de dados.
+3. Criando um novo modelo sobre a saída de uma (ou várias) camadas do modelo_base.
+4. Treinando seu novo modelo em seu novo conjunto de dados.
 
 # Afinando o modelo
 Após treinar seu modelo com novos dados, podemos descongelar o modelo_base utilizando **_modelo_base.trainable = True_** e treinar novamente do inicio ao fim com uma baixa taxa de aprendizado.
